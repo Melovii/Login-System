@@ -11,7 +11,6 @@ public class Login extends JFrame
     JLabel usernameL;
     JLabel passwordL;
     JLabel conditionL;
-    JLabel conditionL2;
     JButton loginB;
     JButton resetB;
     JPanel conditionP;
@@ -38,7 +37,6 @@ public class Login extends JFrame
         passwordL.setForeground(Color.WHITE);
         this.add(usernameL);
         this.add(passwordL);
-
 
         conditionL = new JLabel();
         conditionP = new JPanel(new BorderLayout());
@@ -79,8 +77,6 @@ public class Login extends JFrame
                 String password = passwordIN.getText();
                 String key = Main.data.getKey(username);
 
-// note: x.containsKey("username") if false then there's no key and you must ask for password!
-// note: x.containsValue(password) if false then there's no value and you must ask for username!
                 if (Main.data.userData.containsKey(username))
                 {
                     if (key.equals(password))
@@ -107,19 +103,6 @@ public class Login extends JFrame
                 passwordIN.setText("");
             }
         });
-
-        // TEST -------------------------------------------
-        JButton displayB = new JButton("Display HashMap");
-        displayB.setBounds(0, 0, 125, 25);
-        displayB.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.data.display();
-            }
-        });
-
-        this.add(displayB);
-        // TEST -------------------------------------------
 
         this.add(loginB);
         this.add(resetB);

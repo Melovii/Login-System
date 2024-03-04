@@ -18,8 +18,6 @@ public class Register extends JFrame
     JPanel conditionP;
 
     JLabel conditionL;
-    JLabel conditionL2;
-    JLabel conditionL3;
 
     Register()
     {
@@ -81,8 +79,6 @@ public class Register extends JFrame
         this.add(passwordCheck);
         // ---------------- TEXTFIELD ----------------
 
-
-
         // ---------------- BUTTON ----------------
         loggedB = new JButton("Login Page");
         registerB = new JButton("Register");
@@ -109,13 +105,6 @@ public class Register extends JFrame
             public void actionPerformed(ActionEvent e) {
                 // first check if password conditions met:
                 // username must be unique.
-                // password must be at least 9 characters long
-                // password must contain at least 2 special chars and 2 numbers
-                // passwords must match
-                // otherwise show LABEL as RED ERROR! :)
-
-                // TODO add username and password into the data HashMap
-
 
                 String username = usernameIN.getText();
                 String password = passwordIN.getText();
@@ -141,24 +130,9 @@ public class Register extends JFrame
             }
         });
 
-
-        // TEST -------------------------------------------
-        JButton displayB = new JButton("Display HashMap");
-        displayB.setBounds(0, 0, 125, 25);
-        displayB.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Main.data.display();
-            }
-        });
-
-        this.add(displayB);
-        // TEST -------------------------------------------
-
         this.add(registerB);
         this.add(loggedB);
         // ---------------- BUTTON ----------------
-
 
         this.setVisible(true);
     }
